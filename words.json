@@ -1,0 +1,1602 @@
+[
+ {
+  "id": 1,
+  "word": "今日",
+  "kana": "きょう",
+  "romaji": "kyou",
+  "meaning": "hôm nay",
+  "group": "Thời gian"
+ },
+ {
+  "id": 2,
+  "word": "明日",
+  "kana": "あした",
+  "romaji": "ashita",
+  "meaning": "ngày mai",
+  "group": "Thời gian"
+ },
+ {
+  "id": 3,
+  "word": "昨日",
+  "kana": "きのう",
+  "romaji": "kinou",
+  "meaning": "hôm qua",
+  "group": "Thời gian"
+ },
+ {
+  "id": 4,
+  "word": "今",
+  "kana": "いま",
+  "romaji": "ima",
+  "meaning": "bây giờ",
+  "group": "Thời gian"
+ },
+ {
+  "id": 5,
+  "word": "朝",
+  "kana": "あさ",
+  "romaji": "asa",
+  "meaning": "buổi sáng",
+  "group": "Thời gian"
+ },
+ {
+  "id": 6,
+  "word": "昼",
+  "kana": "ひる",
+  "romaji": "hiru",
+  "meaning": "buổi trưa",
+  "group": "Thời gian"
+ },
+ {
+  "id": 7,
+  "word": "晩",
+  "kana": "ばん",
+  "romaji": "ban",
+  "meaning": "buổi tối",
+  "group": "Thời gian"
+ },
+ {
+  "id": 8,
+  "word": "夜",
+  "kana": "よる",
+  "romaji": "yoru",
+  "meaning": "ban đêm",
+  "group": "Thời gian"
+ },
+ {
+  "id": 9,
+  "word": "毎日",
+  "kana": "まいにち",
+  "romaji": "mainichi",
+  "meaning": "mỗi ngày",
+  "group": "Thời gian"
+ },
+ {
+  "id": 10,
+  "word": "今週",
+  "kana": "こんしゅう",
+  "romaji": "konshuu",
+  "meaning": "tuần này",
+  "group": "Thời gian"
+ },
+ {
+  "id": 11,
+  "word": "来週",
+  "kana": "らいしゅう",
+  "romaji": "raishuu",
+  "meaning": "tuần sau",
+  "group": "Thời gian"
+ },
+ {
+  "id": 12,
+  "word": "先週",
+  "kana": "せんしゅう",
+  "romaji": "senshuu",
+  "meaning": "tuần trước",
+  "group": "Thời gian"
+ },
+ {
+  "id": 13,
+  "word": "今年",
+  "kana": "ことし",
+  "romaji": "kotoshi",
+  "meaning": "năm nay",
+  "group": "Thời gian"
+ },
+ {
+  "id": 14,
+  "word": "去年",
+  "kana": "きょねん",
+  "romaji": "kyonen",
+  "meaning": "năm ngoái",
+  "group": "Thời gian"
+ },
+ {
+  "id": 15,
+  "word": "来年",
+  "kana": "らいねん",
+  "romaji": "rainen",
+  "meaning": "năm sau",
+  "group": "Thời gian"
+ },
+ {
+  "id": 16,
+  "word": "午前",
+  "kana": "ごぜん",
+  "romaji": "gozen",
+  "meaning": "buổi sáng (AM)",
+  "group": "Thời gian"
+ },
+ {
+  "id": 17,
+  "word": "午後",
+  "kana": "ごご",
+  "romaji": "gogo",
+  "meaning": "buổi chiều (PM)",
+  "group": "Thời gian"
+ },
+ {
+  "id": 18,
+  "word": "時間",
+  "kana": "じかん",
+  "romaji": "jikan",
+  "meaning": "thời gian; tiếng đồng hồ",
+  "group": "Thời gian"
+ },
+ {
+  "id": 19,
+  "word": "休み",
+  "kana": "やすみ",
+  "romaji": "yasumi",
+  "meaning": "ngày nghỉ, kỳ nghỉ",
+  "group": "Thời gian"
+ },
+ {
+  "id": 20,
+  "word": "誕生日",
+  "kana": "たんじょうび",
+  "romaji": "tanjoubi",
+  "meaning": "sinh nhật",
+  "group": "Thời gian"
+ },
+ {
+  "id": 21,
+  "word": "人",
+  "kana": "ひと",
+  "romaji": "hito",
+  "meaning": "người",
+  "group": "Con người"
+ },
+ {
+  "id": 22,
+  "word": "友達",
+  "kana": "ともだち",
+  "romaji": "tomodachi",
+  "meaning": "bạn bè",
+  "group": "Con người"
+ },
+ {
+  "id": 23,
+  "word": "先生",
+  "kana": "せんせい",
+  "romaji": "sensei",
+  "meaning": "giáo viên",
+  "group": "Con người"
+ },
+ {
+  "id": 24,
+  "word": "学生",
+  "kana": "がくせい",
+  "romaji": "gakusei",
+  "meaning": "học sinh, sinh viên",
+  "group": "Con người"
+ },
+ {
+  "id": 25,
+  "word": "家族",
+  "kana": "かぞく",
+  "romaji": "kazoku",
+  "meaning": "gia đình",
+  "group": "Con người"
+ },
+ {
+  "id": 26,
+  "word": "父",
+  "kana": "ちち",
+  "romaji": "chichi",
+  "meaning": "bố (của mình)",
+  "group": "Con người"
+ },
+ {
+  "id": 27,
+  "word": "母",
+  "kana": "はは",
+  "romaji": "haha",
+  "meaning": "mẹ (của mình)",
+  "group": "Con người"
+ },
+ {
+  "id": 28,
+  "word": "お父さん",
+  "kana": "おとうさん",
+  "romaji": "otousan",
+  "meaning": "bố (người khác / gọi bố)",
+  "group": "Con người"
+ },
+ {
+  "id": 29,
+  "word": "お母さん",
+  "kana": "おかあさん",
+  "romaji": "okaasan",
+  "meaning": "mẹ (người khác / gọi mẹ)",
+  "group": "Con người"
+ },
+ {
+  "id": 30,
+  "word": "兄",
+  "kana": "あに",
+  "romaji": "ani",
+  "meaning": "anh trai (của mình)",
+  "group": "Con người"
+ },
+ {
+  "id": 31,
+  "word": "姉",
+  "kana": "あね",
+  "romaji": "ane",
+  "meaning": "chị gái (của mình)",
+  "group": "Con người"
+ },
+ {
+  "id": 32,
+  "word": "弟",
+  "kana": "おとうと",
+  "romaji": "otouto",
+  "meaning": "em trai",
+  "group": "Con người"
+ },
+ {
+  "id": 33,
+  "word": "妹",
+  "kana": "いもうと",
+  "romaji": "imouto",
+  "meaning": "em gái",
+  "group": "Con người"
+ },
+ {
+  "id": 34,
+  "word": "子ども",
+  "kana": "こども",
+  "romaji": "kodomo",
+  "meaning": "trẻ con",
+  "group": "Con người"
+ },
+ {
+  "id": 35,
+  "word": "男の人",
+  "kana": "おとこのひと",
+  "romaji": "otoko no hito",
+  "meaning": "người đàn ông",
+  "group": "Con người"
+ },
+ {
+  "id": 36,
+  "word": "女の人",
+  "kana": "おんなのひと",
+  "romaji": "onna no hito",
+  "meaning": "người phụ nữ",
+  "group": "Con người"
+ },
+ {
+  "id": 37,
+  "word": "医者",
+  "kana": "いしゃ",
+  "romaji": "isha",
+  "meaning": "bác sĩ",
+  "group": "Con người"
+ },
+ {
+  "id": 38,
+  "word": "大人",
+  "kana": "おとな",
+  "romaji": "otona",
+  "meaning": "người lớn",
+  "group": "Con người"
+ },
+ {
+  "id": 39,
+  "word": "みんな",
+  "kana": "みんな",
+  "romaji": "minna",
+  "meaning": "mọi người",
+  "group": "Con người"
+ },
+ {
+  "id": 40,
+  "word": "名前",
+  "kana": "なまえ",
+  "romaji": "namae",
+  "meaning": "tên",
+  "group": "Con người"
+ },
+ {
+  "id": 41,
+  "word": "学校",
+  "kana": "がっこう",
+  "romaji": "gakkou",
+  "meaning": "trường học",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 42,
+  "word": "大学",
+  "kana": "だいがく",
+  "romaji": "daigaku",
+  "meaning": "trường đại học",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 43,
+  "word": "教室",
+  "kana": "きょうしつ",
+  "romaji": "kyoushitsu",
+  "meaning": "phòng học",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 44,
+  "word": "家",
+  "kana": "いえ",
+  "romaji": "ie",
+  "meaning": "nhà",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 45,
+  "word": "部屋",
+  "kana": "へや",
+  "romaji": "heya",
+  "meaning": "căn phòng",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 46,
+  "word": "会社",
+  "kana": "かいしゃ",
+  "romaji": "kaisha",
+  "meaning": "công ty",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 47,
+  "word": "駅",
+  "kana": "えき",
+  "romaji": "eki",
+  "meaning": "nhà ga",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 48,
+  "word": "病院",
+  "kana": "びょういん",
+  "romaji": "byouin",
+  "meaning": "bệnh viện",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 49,
+  "word": "銀行",
+  "kana": "ぎんこう",
+  "romaji": "ginkou",
+  "meaning": "ngân hàng",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 50,
+  "word": "郵便局",
+  "kana": "ゆうびんきょく",
+  "romaji": "yuubinkyoku",
+  "meaning": "bưu điện",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 51,
+  "word": "図書館",
+  "kana": "としょかん",
+  "romaji": "toshokan",
+  "meaning": "thư viện",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 52,
+  "word": "店",
+  "kana": "みせ",
+  "romaji": "mise",
+  "meaning": "cửa hàng",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 53,
+  "word": "喫茶店",
+  "kana": "きっさてん",
+  "romaji": "kissaten",
+  "meaning": "quán cà phê",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 54,
+  "word": "公園",
+  "kana": "こうえん",
+  "romaji": "kouen",
+  "meaning": "công viên",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 55,
+  "word": "食堂",
+  "kana": "しょくどう",
+  "romaji": "shokudou",
+  "meaning": "nhà ăn",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 56,
+  "word": "トイレ",
+  "kana": "トイレ",
+  "romaji": "toire",
+  "meaning": "nhà vệ sinh",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 57,
+  "word": "デパート",
+  "kana": "デパート",
+  "romaji": "depaato",
+  "meaning": "cửa hàng bách hóa",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 58,
+  "word": "レストラン",
+  "kana": "レストラン",
+  "romaji": "resutoran",
+  "meaning": "nhà hàng",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 59,
+  "word": "国",
+  "kana": "くに",
+  "romaji": "kuni",
+  "meaning": "đất nước",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 60,
+  "word": "道",
+  "kana": "みち",
+  "romaji": "michi",
+  "meaning": "con đường",
+  "group": "Địa điểm"
+ },
+ {
+  "id": 61,
+  "word": "本",
+  "kana": "ほん",
+  "romaji": "hon",
+  "meaning": "sách",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 62,
+  "word": "辞書",
+  "kana": "じしょ",
+  "romaji": "jisho",
+  "meaning": "từ điển",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 63,
+  "word": "新聞",
+  "kana": "しんぶん",
+  "romaji": "shinbun",
+  "meaning": "báo",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 64,
+  "word": "雑誌",
+  "kana": "ざっし",
+  "romaji": "zasshi",
+  "meaning": "tạp chí",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 65,
+  "word": "手紙",
+  "kana": "てがみ",
+  "romaji": "tegami",
+  "meaning": "lá thư",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 66,
+  "word": "写真",
+  "kana": "しゃしん",
+  "romaji": "shashin",
+  "meaning": "bức ảnh",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 67,
+  "word": "傘",
+  "kana": "かさ",
+  "romaji": "kasa",
+  "meaning": "cái ô",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 68,
+  "word": "かばん",
+  "kana": "かばん",
+  "romaji": "kaban",
+  "meaning": "cặp, túi xách",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 69,
+  "word": "時計",
+  "kana": "とけい",
+  "romaji": "tokei",
+  "meaning": "đồng hồ",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 70,
+  "word": "電話",
+  "kana": "でんわ",
+  "romaji": "denwa",
+  "meaning": "điện thoại",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 71,
+  "word": "机",
+  "kana": "つくえ",
+  "romaji": "tsukue",
+  "meaning": "cái bàn",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 72,
+  "word": "いす",
+  "kana": "いす",
+  "romaji": "isu",
+  "meaning": "cái ghế",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 73,
+  "word": "鉛筆",
+  "kana": "えんぴつ",
+  "romaji": "enpitsu",
+  "meaning": "bút chì",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 74,
+  "word": "ノート",
+  "kana": "ノート",
+  "romaji": "nooto",
+  "meaning": "quyển vở",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 75,
+  "word": "お金",
+  "kana": "おかね",
+  "romaji": "okane",
+  "meaning": "tiền",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 76,
+  "word": "切手",
+  "kana": "きって",
+  "romaji": "kitte",
+  "meaning": "tem thư",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 77,
+  "word": "靴",
+  "kana": "くつ",
+  "romaji": "kutsu",
+  "meaning": "giày",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 78,
+  "word": "服",
+  "kana": "ふく",
+  "romaji": "fuku",
+  "meaning": "quần áo",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 79,
+  "word": "窓",
+  "kana": "まど",
+  "romaji": "mado",
+  "meaning": "cửa sổ",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 80,
+  "word": "ドア",
+  "kana": "ドア",
+  "romaji": "doa",
+  "meaning": "cửa ra vào",
+  "group": "Đồ vật"
+ },
+ {
+  "id": 81,
+  "word": "ご飯",
+  "kana": "ごはん",
+  "romaji": "gohan",
+  "meaning": "cơm; bữa ăn",
+  "group": "Ăn uống"
+ },
+ {
+  "id": 82,
+  "word": "朝ご飯",
+  "kana": "あさごはん",
+  "romaji": "asagohan",
+  "meaning": "bữa sáng",
+  "group": "Ăn uống"
+ },
+ {
+  "id": 83,
+  "word": "水",
+  "kana": "みず",
+  "romaji": "mizu",
+  "meaning": "nước",
+  "group": "Ăn uống"
+ },
+ {
+  "id": 84,
+  "word": "お茶",
+  "kana": "おちゃ",
+  "romaji": "ocha",
+  "meaning": "trà",
+  "group": "Ăn uống"
+ },
+ {
+  "id": 85,
+  "word": "肉",
+  "kana": "にく",
+  "romaji": "niku",
+  "meaning": "thịt",
+  "group": "Ăn uống"
+ },
+ {
+  "id": 86,
+  "word": "魚",
+  "kana": "さかな",
+  "romaji": "sakana",
+  "meaning": "cá",
+  "group": "Ăn uống"
+ },
+ {
+  "id": 87,
+  "word": "野菜",
+  "kana": "やさい",
+  "romaji": "yasai",
+  "meaning": "rau",
+  "group": "Ăn uống"
+ },
+ {
+  "id": 88,
+  "word": "果物",
+  "kana": "くだもの",
+  "romaji": "kudamono",
+  "meaning": "hoa quả",
+  "group": "Ăn uống"
+ },
+ {
+  "id": 89,
+  "word": "卵",
+  "kana": "たまご",
+  "romaji": "tamago",
+  "meaning": "trứng",
+  "group": "Ăn uống"
+ },
+ {
+  "id": 90,
+  "word": "料理",
+  "kana": "りょうり",
+  "romaji": "ryouri",
+  "meaning": "món ăn; nấu ăn",
+  "group": "Ăn uống"
+ },
+ {
+  "id": 91,
+  "word": "車",
+  "kana": "くるま",
+  "romaji": "kuruma",
+  "meaning": "ô tô",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 92,
+  "word": "電車",
+  "kana": "でんしゃ",
+  "romaji": "densha",
+  "meaning": "tàu điện",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 93,
+  "word": "バス",
+  "kana": "バス",
+  "romaji": "basu",
+  "meaning": "xe buýt",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 94,
+  "word": "自転車",
+  "kana": "じてんしゃ",
+  "romaji": "jitensha",
+  "meaning": "xe đạp",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 95,
+  "word": "地下鉄",
+  "kana": "ちかてつ",
+  "romaji": "chikatetsu",
+  "meaning": "tàu điện ngầm",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 96,
+  "word": "飛行機",
+  "kana": "ひこうき",
+  "romaji": "hikouki",
+  "meaning": "máy bay",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 97,
+  "word": "タクシー",
+  "kana": "タクシー",
+  "romaji": "takushii",
+  "meaning": "taxi",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 98,
+  "word": "天気",
+  "kana": "てんき",
+  "romaji": "tenki",
+  "meaning": "thời tiết",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 99,
+  "word": "雨",
+  "kana": "あめ",
+  "romaji": "ame",
+  "meaning": "mưa",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 100,
+  "word": "雪",
+  "kana": "ゆき",
+  "romaji": "yuki",
+  "meaning": "tuyết",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 101,
+  "word": "山",
+  "kana": "やま",
+  "romaji": "yama",
+  "meaning": "núi",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 102,
+  "word": "川",
+  "kana": "かわ",
+  "romaji": "kawa",
+  "meaning": "sông",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 103,
+  "word": "海",
+  "kana": "うみ",
+  "romaji": "umi",
+  "meaning": "biển",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 104,
+  "word": "花",
+  "kana": "はな",
+  "romaji": "hana",
+  "meaning": "hoa",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 105,
+  "word": "犬",
+  "kana": "いぬ",
+  "romaji": "inu",
+  "meaning": "con chó",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 106,
+  "word": "猫",
+  "kana": "ねこ",
+  "romaji": "neko",
+  "meaning": "con mèo",
+  "group": "Phương tiện & tự nhiên"
+ },
+ {
+  "id": 107,
+  "word": "上",
+  "kana": "うえ",
+  "romaji": "ue",
+  "meaning": "trên",
+  "group": "Vị trí"
+ },
+ {
+  "id": 108,
+  "word": "下",
+  "kana": "した",
+  "romaji": "shita",
+  "meaning": "dưới",
+  "group": "Vị trí"
+ },
+ {
+  "id": 109,
+  "word": "前",
+  "kana": "まえ",
+  "romaji": "mae",
+  "meaning": "phía trước; trước đây",
+  "group": "Vị trí"
+ },
+ {
+  "id": 110,
+  "word": "後ろ",
+  "kana": "うしろ",
+  "romaji": "ushiro",
+  "meaning": "phía sau",
+  "group": "Vị trí"
+ },
+ {
+  "id": 111,
+  "word": "中",
+  "kana": "なか",
+  "romaji": "naka",
+  "meaning": "bên trong",
+  "group": "Vị trí"
+ },
+ {
+  "id": 112,
+  "word": "外",
+  "kana": "そと",
+  "romaji": "soto",
+  "meaning": "bên ngoài",
+  "group": "Vị trí"
+ },
+ {
+  "id": 113,
+  "word": "右",
+  "kana": "みぎ",
+  "romaji": "migi",
+  "meaning": "bên phải",
+  "group": "Vị trí"
+ },
+ {
+  "id": 114,
+  "word": "左",
+  "kana": "ひだり",
+  "romaji": "hidari",
+  "meaning": "bên trái",
+  "group": "Vị trí"
+ },
+ {
+  "id": 115,
+  "word": "隣",
+  "kana": "となり",
+  "romaji": "tonari",
+  "meaning": "bên cạnh",
+  "group": "Vị trí"
+ },
+ {
+  "id": 116,
+  "word": "近く",
+  "kana": "ちかく",
+  "romaji": "chikaku",
+  "meaning": "gần đây, khu vực gần",
+  "group": "Vị trí"
+ },
+ {
+  "id": 117,
+  "word": "間",
+  "kana": "あいだ",
+  "romaji": "aida",
+  "meaning": "ở giữa",
+  "group": "Vị trí"
+ },
+ {
+  "id": 118,
+  "word": "体",
+  "kana": "からだ",
+  "romaji": "karada",
+  "meaning": "cơ thể",
+  "group": "Danh từ khác"
+ },
+ {
+  "id": 119,
+  "word": "頭",
+  "kana": "あたま",
+  "romaji": "atama",
+  "meaning": "đầu",
+  "group": "Danh từ khác"
+ },
+ {
+  "id": 120,
+  "word": "目",
+  "kana": "め",
+  "romaji": "me",
+  "meaning": "mắt",
+  "group": "Danh từ khác"
+ },
+ {
+  "id": 121,
+  "word": "病気",
+  "kana": "びょうき",
+  "romaji": "byouki",
+  "meaning": "bệnh",
+  "group": "Danh từ khác"
+ },
+ {
+  "id": 122,
+  "word": "薬",
+  "kana": "くすり",
+  "romaji": "kusuri",
+  "meaning": "thuốc",
+  "group": "Danh từ khác"
+ },
+ {
+  "id": 123,
+  "word": "仕事",
+  "kana": "しごと",
+  "romaji": "shigoto",
+  "meaning": "công việc",
+  "group": "Danh từ khác"
+ },
+ {
+  "id": 124,
+  "word": "宿題",
+  "kana": "しゅくだい",
+  "romaji": "shukudai",
+  "meaning": "bài tập về nhà",
+  "group": "Danh từ khác"
+ },
+ {
+  "id": 125,
+  "word": "映画",
+  "kana": "えいが",
+  "romaji": "eiga",
+  "meaning": "phim",
+  "group": "Danh từ khác"
+ },
+ {
+  "id": 126,
+  "word": "音楽",
+  "kana": "おんがく",
+  "romaji": "ongaku",
+  "meaning": "âm nhạc",
+  "group": "Danh từ khác"
+ },
+ {
+  "id": 127,
+  "word": "歌",
+  "kana": "うた",
+  "romaji": "uta",
+  "meaning": "bài hát",
+  "group": "Danh từ khác"
+ },
+ {
+  "id": 128,
+  "word": "言葉",
+  "kana": "ことば",
+  "romaji": "kotoba",
+  "meaning": "từ ngữ",
+  "group": "Danh từ khác"
+ },
+ {
+  "id": 129,
+  "word": "漢字",
+  "kana": "かんじ",
+  "romaji": "kanji",
+  "meaning": "chữ Hán",
+  "group": "Danh từ khác"
+ },
+ {
+  "id": 130,
+  "word": "旅行",
+  "kana": "りょこう",
+  "romaji": "ryokou",
+  "meaning": "du lịch",
+  "group": "Danh từ khác"
+ },
+ {
+  "id": 131,
+  "word": "行く",
+  "kana": "いく",
+  "romaji": "iku",
+  "meaning": "đi",
+  "group": "Động từ"
+ },
+ {
+  "id": 132,
+  "word": "来る",
+  "kana": "くる",
+  "romaji": "kuru",
+  "meaning": "đến",
+  "group": "Động từ"
+ },
+ {
+  "id": 133,
+  "word": "帰る",
+  "kana": "かえる",
+  "romaji": "kaeru",
+  "meaning": "về",
+  "group": "Động từ"
+ },
+ {
+  "id": 134,
+  "word": "食べる",
+  "kana": "たべる",
+  "romaji": "taberu",
+  "meaning": "ăn",
+  "group": "Động từ"
+ },
+ {
+  "id": 135,
+  "word": "飲む",
+  "kana": "のむ",
+  "romaji": "nomu",
+  "meaning": "uống",
+  "group": "Động từ"
+ },
+ {
+  "id": 136,
+  "word": "見る",
+  "kana": "みる",
+  "romaji": "miru",
+  "meaning": "xem, nhìn",
+  "group": "Động từ"
+ },
+ {
+  "id": 137,
+  "word": "聞く",
+  "kana": "きく",
+  "romaji": "kiku",
+  "meaning": "nghe; hỏi",
+  "group": "Động từ"
+ },
+ {
+  "id": 138,
+  "word": "読む",
+  "kana": "よむ",
+  "romaji": "yomu",
+  "meaning": "đọc",
+  "group": "Động từ"
+ },
+ {
+  "id": 139,
+  "word": "書く",
+  "kana": "かく",
+  "romaji": "kaku",
+  "meaning": "viết",
+  "group": "Động từ"
+ },
+ {
+  "id": 140,
+  "word": "話す",
+  "kana": "はなす",
+  "romaji": "hanasu",
+  "meaning": "nói chuyện",
+  "group": "Động từ"
+ },
+ {
+  "id": 141,
+  "word": "買う",
+  "kana": "かう",
+  "romaji": "kau",
+  "meaning": "mua",
+  "group": "Động từ"
+ },
+ {
+  "id": 142,
+  "word": "待つ",
+  "kana": "まつ",
+  "romaji": "matsu",
+  "meaning": "đợi",
+  "group": "Động từ"
+ },
+ {
+  "id": 143,
+  "word": "会う",
+  "kana": "あう",
+  "romaji": "au",
+  "meaning": "gặp",
+  "group": "Động từ"
+ },
+ {
+  "id": 144,
+  "word": "起きる",
+  "kana": "おきる",
+  "romaji": "okiru",
+  "meaning": "thức dậy",
+  "group": "Động từ"
+ },
+ {
+  "id": 145,
+  "word": "寝る",
+  "kana": "ねる",
+  "romaji": "neru",
+  "meaning": "ngủ",
+  "group": "Động từ"
+ },
+ {
+  "id": 146,
+  "word": "勉強する",
+  "kana": "べんきょうする",
+  "romaji": "benkyou suru",
+  "meaning": "học",
+  "group": "Động từ"
+ },
+ {
+  "id": 147,
+  "word": "働く",
+  "kana": "はたらく",
+  "romaji": "hataraku",
+  "meaning": "làm việc",
+  "group": "Động từ"
+ },
+ {
+  "id": 148,
+  "word": "休む",
+  "kana": "やすむ",
+  "romaji": "yasumu",
+  "meaning": "nghỉ",
+  "group": "Động từ"
+ },
+ {
+  "id": 149,
+  "word": "入る",
+  "kana": "はいる",
+  "romaji": "hairu",
+  "meaning": "vào",
+  "group": "Động từ"
+ },
+ {
+  "id": 150,
+  "word": "出る",
+  "kana": "でる",
+  "romaji": "deru",
+  "meaning": "ra, đi ra",
+  "group": "Động từ"
+ },
+ {
+  "id": 151,
+  "word": "出かける",
+  "kana": "でかける",
+  "romaji": "dekakeru",
+  "meaning": "ra ngoài, đi chơi",
+  "group": "Động từ"
+ },
+ {
+  "id": 152,
+  "word": "着る",
+  "kana": "きる",
+  "romaji": "kiru",
+  "meaning": "mặc (áo)",
+  "group": "Động từ"
+ },
+ {
+  "id": 153,
+  "word": "脱ぐ",
+  "kana": "ぬぐ",
+  "romaji": "nugu",
+  "meaning": "cởi (áo, giày)",
+  "group": "Động từ"
+ },
+ {
+  "id": 154,
+  "word": "開ける",
+  "kana": "あける",
+  "romaji": "akeru",
+  "meaning": "mở",
+  "group": "Động từ"
+ },
+ {
+  "id": 155,
+  "word": "閉める",
+  "kana": "しめる",
+  "romaji": "shimeru",
+  "meaning": "đóng",
+  "group": "Động từ"
+ },
+ {
+  "id": 156,
+  "word": "使う",
+  "kana": "つかう",
+  "romaji": "tsukau",
+  "meaning": "sử dụng",
+  "group": "Động từ"
+ },
+ {
+  "id": 157,
+  "word": "作る",
+  "kana": "つくる",
+  "romaji": "tsukuru",
+  "meaning": "làm, chế tạo",
+  "group": "Động từ"
+ },
+ {
+  "id": 158,
+  "word": "住む",
+  "kana": "すむ",
+  "romaji": "sumu",
+  "meaning": "sống, cư trú",
+  "group": "Động từ"
+ },
+ {
+  "id": 159,
+  "word": "知る",
+  "kana": "しる",
+  "romaji": "shiru",
+  "meaning": "biết",
+  "group": "Động từ"
+ },
+ {
+  "id": 160,
+  "word": "分かる",
+  "kana": "わかる",
+  "romaji": "wakaru",
+  "meaning": "hiểu",
+  "group": "Động từ"
+ },
+ {
+  "id": 161,
+  "word": "教える",
+  "kana": "おしえる",
+  "romaji": "oshieru",
+  "meaning": "dạy; chỉ cho",
+  "group": "Động từ"
+ },
+ {
+  "id": 162,
+  "word": "習う",
+  "kana": "ならう",
+  "romaji": "narau",
+  "meaning": "học (từ ai đó)",
+  "group": "Động từ"
+ },
+ {
+  "id": 163,
+  "word": "歩く",
+  "kana": "あるく",
+  "romaji": "aruku",
+  "meaning": "đi bộ",
+  "group": "Động từ"
+ },
+ {
+  "id": 164,
+  "word": "乗る",
+  "kana": "のる",
+  "romaji": "noru",
+  "meaning": "lên (xe, tàu)",
+  "group": "Động từ"
+ },
+ {
+  "id": 165,
+  "word": "降りる",
+  "kana": "おりる",
+  "romaji": "oriru",
+  "meaning": "xuống (xe, tàu)",
+  "group": "Động từ"
+ },
+ {
+  "id": 166,
+  "word": "撮る",
+  "kana": "とる",
+  "romaji": "toru",
+  "meaning": "chụp (ảnh)",
+  "group": "Động từ"
+ },
+ {
+  "id": 167,
+  "word": "洗う",
+  "kana": "あらう",
+  "romaji": "arau",
+  "meaning": "rửa",
+  "group": "Động từ"
+ },
+ {
+  "id": 168,
+  "word": "貸す",
+  "kana": "かす",
+  "romaji": "kasu",
+  "meaning": "cho mượn",
+  "group": "Động từ"
+ },
+ {
+  "id": 169,
+  "word": "借りる",
+  "kana": "かりる",
+  "romaji": "kariru",
+  "meaning": "mượn",
+  "group": "Động từ"
+ },
+ {
+  "id": 170,
+  "word": "降る",
+  "kana": "ふる",
+  "romaji": "furu",
+  "meaning": "(mưa, tuyết) rơi",
+  "group": "Động từ"
+ },
+ {
+  "id": 171,
+  "word": "大きい",
+  "kana": "おおきい",
+  "romaji": "ookii",
+  "meaning": "to, lớn",
+  "group": "Tính từ"
+ },
+ {
+  "id": 172,
+  "word": "小さい",
+  "kana": "ちいさい",
+  "romaji": "chiisai",
+  "meaning": "nhỏ",
+  "group": "Tính từ"
+ },
+ {
+  "id": 173,
+  "word": "新しい",
+  "kana": "あたらしい",
+  "romaji": "atarashii",
+  "meaning": "mới",
+  "group": "Tính từ"
+ },
+ {
+  "id": 174,
+  "word": "古い",
+  "kana": "ふるい",
+  "romaji": "furui",
+  "meaning": "cũ",
+  "group": "Tính từ"
+ },
+ {
+  "id": 175,
+  "word": "高い",
+  "kana": "たかい",
+  "romaji": "takai",
+  "meaning": "cao; đắt",
+  "group": "Tính từ"
+ },
+ {
+  "id": 176,
+  "word": "安い",
+  "kana": "やすい",
+  "romaji": "yasui",
+  "meaning": "rẻ",
+  "group": "Tính từ"
+ },
+ {
+  "id": 177,
+  "word": "暑い",
+  "kana": "あつい",
+  "romaji": "atsui",
+  "meaning": "nóng (thời tiết)",
+  "group": "Tính từ"
+ },
+ {
+  "id": 178,
+  "word": "寒い",
+  "kana": "さむい",
+  "romaji": "samui",
+  "meaning": "lạnh (thời tiết)",
+  "group": "Tính từ"
+ },
+ {
+  "id": 179,
+  "word": "おいしい",
+  "kana": "おいしい",
+  "romaji": "oishii",
+  "meaning": "ngon",
+  "group": "Tính từ"
+ },
+ {
+  "id": 180,
+  "word": "忙しい",
+  "kana": "いそがしい",
+  "romaji": "isogashii",
+  "meaning": "bận",
+  "group": "Tính từ"
+ },
+ {
+  "id": 181,
+  "word": "難しい",
+  "kana": "むずかしい",
+  "romaji": "muzukashii",
+  "meaning": "khó",
+  "group": "Tính từ"
+ },
+ {
+  "id": 182,
+  "word": "易しい",
+  "kana": "やさしい",
+  "romaji": "yasashii",
+  "meaning": "dễ",
+  "group": "Tính từ"
+ },
+ {
+  "id": 183,
+  "word": "楽しい",
+  "kana": "たのしい",
+  "romaji": "tanoshii",
+  "meaning": "vui",
+  "group": "Tính từ"
+ },
+ {
+  "id": 184,
+  "word": "近い",
+  "kana": "ちかい",
+  "romaji": "chikai",
+  "meaning": "gần",
+  "group": "Tính từ"
+ },
+ {
+  "id": 185,
+  "word": "遠い",
+  "kana": "とおい",
+  "romaji": "tooi",
+  "meaning": "xa",
+  "group": "Tính từ"
+ },
+ {
+  "id": 186,
+  "word": "好き",
+  "kana": "すき",
+  "romaji": "suki",
+  "meaning": "thích",
+  "group": "Tính từ"
+ },
+ {
+  "id": 187,
+  "word": "嫌い",
+  "kana": "きらい",
+  "romaji": "kirai",
+  "meaning": "ghét",
+  "group": "Tính từ"
+ },
+ {
+  "id": 188,
+  "word": "静か",
+  "kana": "しずか",
+  "romaji": "shizuka",
+  "meaning": "yên tĩnh",
+  "group": "Tính từ"
+ },
+ {
+  "id": 189,
+  "word": "元気",
+  "kana": "げんき",
+  "romaji": "genki",
+  "meaning": "khỏe mạnh",
+  "group": "Tính từ"
+ },
+ {
+  "id": 190,
+  "word": "有名",
+  "kana": "ゆうめい",
+  "romaji": "yuumei",
+  "meaning": "nổi tiếng",
+  "group": "Tính từ"
+ },
+ {
+  "id": 191,
+  "word": "とても",
+  "kana": "とても",
+  "romaji": "totemo",
+  "meaning": "rất",
+  "group": "Phó từ & từ hỏi"
+ },
+ {
+  "id": 192,
+  "word": "よく",
+  "kana": "よく",
+  "romaji": "yoku",
+  "meaning": "thường, hay; giỏi",
+  "group": "Phó từ & từ hỏi"
+ },
+ {
+  "id": 193,
+  "word": "もう",
+  "kana": "もう",
+  "romaji": "mou",
+  "meaning": "đã, rồi; thêm",
+  "group": "Phó từ & từ hỏi"
+ },
+ {
+  "id": 194,
+  "word": "まだ",
+  "kana": "まだ",
+  "romaji": "mada",
+  "meaning": "vẫn; chưa",
+  "group": "Phó từ & từ hỏi"
+ },
+ {
+  "id": 195,
+  "word": "いつも",
+  "kana": "いつも",
+  "romaji": "itsumo",
+  "meaning": "luôn luôn",
+  "group": "Phó từ & từ hỏi"
+ },
+ {
+  "id": 196,
+  "word": "少し",
+  "kana": "すこし",
+  "romaji": "sukoshi",
+  "meaning": "một chút",
+  "group": "Phó từ & từ hỏi"
+ },
+ {
+  "id": 197,
+  "word": "たくさん",
+  "kana": "たくさん",
+  "romaji": "takusan",
+  "meaning": "nhiều",
+  "group": "Phó từ & từ hỏi"
+ },
+ {
+  "id": 198,
+  "word": "いつ",
+  "kana": "いつ",
+  "romaji": "itsu",
+  "meaning": "khi nào",
+  "group": "Phó từ & từ hỏi"
+ },
+ {
+  "id": 199,
+  "word": "どこ",
+  "kana": "どこ",
+  "romaji": "doko",
+  "meaning": "ở đâu",
+  "group": "Phó từ & từ hỏi"
+ },
+ {
+  "id": 200,
+  "word": "いくら",
+  "kana": "いくら",
+  "romaji": "ikura",
+  "meaning": "bao nhiêu tiền",
+  "group": "Phó từ & từ hỏi"
+ }
+]

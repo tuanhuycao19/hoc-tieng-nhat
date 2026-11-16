@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#f3f2ef">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Học Tiếng Nhật N5</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <select id="group" aria-label="Nhóm từ"></select>
+  <span id="counter" class="counter">– / –</span>
+  <div class="bar-actions">
+    <button id="btnHide" class="chip" aria-pressed="false" title="Che cách đọc & nghĩa">Che đáp án</button>
+    <button id="btnShuffle" class="chip" aria-pressed="false" title="Xáo trộn">Xáo trộn</button>
+    <button id="btnHistory" class="chip">Lịch sử</button>
+    <button id="btnFull" class="chip icon" title="Toàn màn hình">⛶</button>
+  </div>
+</header>
+
+<main class="layout">
+  <section id="card" class="card">
+    <div class="word" id="word"></div>
+    <div class="answer" id="answer">
+      <div class="kana" id="kana"></div>
+      <div class="romaji" id="romaji"></div>
+      <div class="meaning" id="meaning"></div>
+    </div>
+    <div class="reveal-hint" id="revealHint">Chạm để xem đáp án</div>
+    <div class="meta"><span id="groupTag"></span><span id="seenTag"></span></div>
+  </section>
+
+  <section class="pad">
+    <div class="pad-tools">
+      <button id="btnGuide" class="chip" aria-pressed="true">Chữ mờ</button>
+      <button id="btnPen" class="chip">Nét: vừa</button>
+      <button id="btnUndo" class="chip">Hoàn tác</button>
+      <button id="btnClear" class="chip">Xoá</button>
+    </div>
+    <div class="canvas-wrap" id="canvasWrap">
+      <div class="grid"></div>
+      <div class="guide" id="guide"></div>
+      <canvas id="canvas"></canvas>
+    </div>
+  </section>
+</main>
+
+<footer class="nav">
+  <button id="btnPrev" class="navbtn">‹ PREV</button>
+  <button id="btnLearned" class="navbtn learned" aria-pressed="false">✓ Đã thuộc</button>
+  <button id="btnNext" class="navbtn primary">NEXT ›</button>
+</footer>
+
+<div id="history" class="sheet" hidden>
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <h2>Lịch sử học</h2>
+      <button id="btnCloseHistory" class="chip">Đóng</button>
+    </div>
+    <div class="stats" id="stats"></div>
+    <h3>Theo ngày</h3>
+    <div class="days" id="days"></div>
+    <h3>Từ xem gần đây</h3>
+    <div class="recent" id="recent"></div>
+    <h3>Đã thuộc</h3>
+    <div class="recent" id="learnedList"></div>
+    <div class="sheet-foot">
+      <button id="btnReset" class="chip danger">Xoá toàn bộ lịch sử</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

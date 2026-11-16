@@ -1,0 +1,11 @@
+{
+  "name": "Học Tiếng Nhật N5",
+  "short_name": "Tiếng Nhật",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#f3f2ef",
+  "theme_color": "#f3f2ef",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
