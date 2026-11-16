@@ -30,8 +30,6 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      - uses: android-actions/setup-android@v3
-
       - name: Copy web app into Android project
         run: |
           npm ci
@@ -40,6 +38,7 @@ jobs:
       - name: Build APK
         working-directory: android
         run: |
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
           chmod +x gradlew
           ./gradlew assembleRelease --no-daemon
           cp app/build/outputs/apk/release/app-release.apk ../tieng-nhat-n5.apk
