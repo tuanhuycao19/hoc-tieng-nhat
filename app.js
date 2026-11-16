@@ -234,6 +234,8 @@
   $("btnPen").addEventListener("click", () => { state.pen = (state.pen + 1) % PEN_SIZES.length; applySettingsUI(); save(); });
 
   // ---------- Fullscreen ----------
+  // The Android app already runs in immersive full screen
+  if (window.Capacitor?.isNativePlatform?.()) $("btnFull").hidden = true;
   $("btnFull").addEventListener("click", () => {
     const d = document, el = d.documentElement;
     if (d.fullscreenElement || d.webkitFullscreenElement) {
