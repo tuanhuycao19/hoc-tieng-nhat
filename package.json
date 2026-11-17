@@ -1,0 +1,16 @@
+{
+  "name": "hoc-tieng-nhat",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:web": "rm -rf www && mkdir www && cp index.html style.css app.js words.json manifest.webmanifest icon.svg www/ && cp -r fonts www/",
+    "sync": "npm run build:web && npx cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.6.2",
+    "@capacitor/core": "^8.6.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.6.2"
+  }
+}

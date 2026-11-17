@@ -5,26 +5,28 @@
   const $ = (id) => document.getElementById(id);
 
   // ---------- State & storage ----------
-  const defaults = {
+  const makeDefaults = () => ({
     currentId: null,
     group: "all",
     shuffle: false,
     order: null,        // shuffled list of ids
     hide: false,
+    hideMeaning: false,
     guide: true,
     pen: 1,             // index into PEN_SIZES
     learned: {},        // id -> timestamp
     seen: {},           // id -> { n, last }
     days: {},           // "YYYY-MM-DD" -> { views, words: [ids] }
     recent: [],         // most recent ids first
-  };
+    notes: {},          // id -> personal mnemonic ("Cách liên hệ thú vị")
+  });
   let state = load();
 
   function load() {
     try {
       const raw = localStorage.getItem(STORE_KEY);
-      return raw ? { ...defaults, ...JSON.parse(raw) } : { ...defaults };
-    } catch { return { ...defaults }; }
+      return raw ? { ...makeDefaults(), ...JSON.parse(raw) } : makeDefaults();
+    } catch { return makeDefaults(); }
   }
   function save() {
     try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch {}
@@ -111,6 +113,7 @@
       $("groupTag").textContent = "";
       $("seenTag").textContent = "";
       $("guide").textContent = "";
+      $("note").hidden = true;
       card.classList.remove("is-learned");
       $("btnLearned").setAttribute("aria-pressed", "false");
       save();
@@ -134,6 +137,7 @@
     card.classList.toggle("is-learned", learned);
     $("btnLearned").setAttribute("aria-pressed", String(learned));
 
+    renderNote(w);
     $("guide").textContent = w.word;
     clearCanvas();
     sizeGuide();
@@ -177,6 +181,11 @@
   $("btnNext").addEventListener("click", () => go(1));
   $("btnPrev").addEventListener("click", () => go(-1));
   document.addEventListener("keydown", (e) => {
+    if (!$("noteSheet").hidden) {
+      if (e.key === "Escape") closeNote();
+      else if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) $("btnNoteSave").click();
+      return;
+    }
     if (!$("history").hidden) { if (e.key === "Escape") closeHistory(); return; }
     if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); go(1); }
     else if (e.key === "ArrowLeft") go(-1);
@@ -188,6 +197,7 @@
     let sx = 0, sy = 0, t = 0;
     card.addEventListener("pointerdown", (e) => { sx = e.clientX; sy = e.clientY; t = Date.now(); });
     card.addEventListener("pointerup", (e) => {
+      if (e.target.closest(".note-btn")) return;
       const dx = e.clientX - sx, dy = e.clientY - sy;
       if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5 && Date.now() - t < 600) {
         go(dx < 0 ? 1 : -1);
@@ -216,12 +226,52 @@
   function applySettingsUI() {
     document.body.classList.toggle("hide-answer", state.hide);
     $("btnHide").setAttribute("aria-pressed", String(state.hide));
+    document.body.classList.toggle("hide-meaning", state.hideMeaning);
+    $("btnHideMeaning").setAttribute("aria-pressed", String(state.hideMeaning));
     $("btnShuffle").setAttribute("aria-pressed", String(state.shuffle));
     $("btnGuide").setAttribute("aria-pressed", String(state.guide));
     $("guide").hidden = !state.guide;
     $("btnPen").textContent = `Nét: ${PEN_SIZES[state.pen].t}`;
   }
   $("btnHide").addEventListener("click", () => { state.hide = !state.hide; applySettingsUI(); save(); });
+  $("btnHideMeaning").addEventListener("click", () => {
+    state.hideMeaning = !state.hideMeaning;
+    $("card").classList.remove("revealed");
+    applySettingsUI();
+    save();
+  });
+
+  // ---------- Personal notes ("Cách liên hệ thú vị") ----------
+  function renderNote(w) {
+    const text = (state.notes || {})[w.id] || "";
+    $("note").hidden = false;
+    $("noteText").textContent = text;
+    $("btnNote").textContent = text ? "✎ Sửa cách liên hệ" : "✎ Thêm cách liên hệ thú vị";
+  }
+  function openNote() {
+    if (!list.length) return;
+    const w = list[pos];
+    $("noteWord").textContent = w.word;
+    $("noteSub").textContent = `${w.kana} · ${w.romaji} · ${w.meaning}`;
+    $("noteInput").value = (state.notes || {})[w.id] || "";
+    $("btnNoteDelete").hidden = !state.notes?.[w.id];
+    $("noteSheet").hidden = false;
+    setTimeout(() => $("noteInput").focus(), 50);
+  }
+  function closeNote() { $("noteSheet").hidden = true; $("noteInput").blur(); }
+  function setNote(text) {
+    const w = list[pos];
+    state.notes = state.notes || {};
+    if (text) state.notes[w.id] = text; else delete state.notes[w.id];
+    save();
+    renderNote(w);
+    closeNote();
+  }
+  $("btnNote").addEventListener("click", openNote);
+  $("btnNoteCancel").addEventListener("click", closeNote);
+  $("btnNoteSave").addEventListener("click", () => setNote($("noteInput").value.trim()));
+  $("btnNoteDelete").addEventListener("click", () => { if (confirm("Xoá cách liên hệ của từ này?")) setNote(""); });
+  $("noteSheet").addEventListener("click", (e) => { if (e.target.id === "noteSheet") closeNote(); });
   $("btnShuffle").addEventListener("click", () => {
     state.shuffle = !state.shuffle;
     state.order = state.shuffle ? shuffled(words.map((w) => w.id)) : null;
@@ -234,6 +284,8 @@
   $("btnPen").addEventListener("click", () => { state.pen = (state.pen + 1) % PEN_SIZES.length; applySettingsUI(); save(); });
 
   // ---------- Fullscreen ----------
+  // The Android app already runs in immersive full screen
+  if (window.Capacitor?.isNativePlatform?.()) $("btnFull").hidden = true;
   $("btnFull").addEventListener("click", () => {
     const d = document, el = d.documentElement;
     if (d.fullscreenElement || d.webkitFullscreenElement) {
@@ -378,11 +430,26 @@
       const b = wordButton(Number(id)); if (b) ll.appendChild(b);
     });
     if (!ll.children.length) ll.innerHTML = `<div class="empty">Chưa có</div>`;
+
+    const nl = $("noteList");
+    nl.innerHTML = "";
+    Object.entries(state.notes || {}).forEach(([id, text]) => {
+      const w = byId.get(Number(id));
+      if (!w) return;
+      const b = document.createElement("button");
+      b.className = "note-row";
+      b.innerHTML = `<span class="note-row-word">${esc(w.word)}</span><span class="note-row-text">${esc(text)}</span>`;
+      b.addEventListener("click", () => jumpTo(w.id));
+      nl.appendChild(b);
+    });
+    if (!nl.children.length) nl.innerHTML = `<div class="empty">Chưa có</div>`;
   }
 
   $("btnReset").addEventListener("click", () => {
     if (!confirm("Xoá toàn bộ lịch sử học và danh sách đã thuộc?")) return;
-    state = { ...defaults, group: state.group, hide: state.hide, guide: state.guide, pen: state.pen };
+    // Personal notes are the user's own writing, so keep them
+    state = { ...makeDefaults(), group: state.group, hide: state.hide, hideMeaning: state.hideMeaning,
+              guide: state.guide, pen: state.pen, notes: state.notes };
     lastRecordedId = null;
     buildList();
     render();

@@ -1,0 +1,60 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [main, "claude/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    env:
+      VERSION_CODE: ${{ github.run_number }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Copy web app into Android project
+        run: |
+          npm ci
+          npm run sync
+
+      - name: Build APK
+        working-directory: android
+        run: |
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
+          chmod +x gradlew
+          ./gradlew assembleRelease --no-daemon
+          cp app/build/outputs/apk/release/app-release.apk ../tieng-nhat-n5.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tieng-nhat-n5-apk
+          path: tieng-nhat-n5.apk
+
+      - name: Publish to "latest" release
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete latest --yes --cleanup-tag || true
+          gh release create latest tieng-nhat-n5.apk \
+            --title "APK mới nhất (build ${{ github.run_number }})" \
+            --notes "Tải file tieng-nhat-n5.apk về máy Android và mở để cài đặt." \
+            --target "${{ github.sha }}"

@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Klee One";
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/klee-one-600.woff2") format("woff2");
+}
 :root {
   --bg: #f3f2ef;
   --surface: #fbfaf8;
@@ -32,7 +38,7 @@ html, body { height: 100%; margin: 0; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -81,18 +87,66 @@ button, select { font: inherit; color: inherit; }
   touch-action: pan-y;
 }
 .word {
-  font-family: "Klee One", "Noto Sans JP", serif;
+  font-family: "Klee One", "Noto Sans JP", "Hiragino Sans", sans-serif;
   font-weight: 600; line-height: 1.1;
   font-size: clamp(64px, 16vmin, 220px);
   white-space: nowrap;
 }
 .answer { margin-top: 2vmin; transition: opacity .15s; }
-.kana { font-size: clamp(28px, 6vmin, 72px); }
+.kana { font-size: clamp(28px, 6vmin, 72px); font-family: "Klee One", "Noto Sans JP", "Hiragino Sans", sans-serif; font-weight: 600; }
 .romaji { font-size: clamp(22px, 4.5vmin, 52px); color: var(--muted); letter-spacing: .04em; margin-top: .3em; }
 .meaning { font-size: clamp(22px, 4.5vmin, 52px); margin-top: .5em; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
 .reveal-hint { display: none; color: var(--muted); margin-top: 3vmin; font-size: 18px; }
 body.hide-answer .card:not(.revealed) .answer { opacity: 0; }
-body.hide-answer .card:not(.revealed) .reveal-hint { display: block; }
+body.hide-answer .card:not(.revealed) .reveal-hint,
+body.hide-meaning .card:not(.revealed) .reveal-hint { display: block; }
+body.hide-meaning .card:not(.revealed) .meaning { visibility: hidden; }
+body.hide-answer .card:not(.revealed) .note,
+body.hide-meaning .card:not(.revealed) .note-text { visibility: hidden; }
+
+/* Personal mnemonic note */
+.note { margin-top: 2.5vmin; max-width: 92%; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.note-text {
+  font-size: clamp(17px, 2.6vmin, 26px); line-height: 1.45;
+  background: var(--bg); border: 1px dashed var(--line); border-radius: 14px;
+  padding: 10px 16px; white-space: pre-wrap; overflow-wrap: anywhere;
+  max-height: 22vmin; overflow-y: auto; text-align: left;
+}
+.note[hidden] { display: none; }
+.note-text:empty { display: none; }
+.note-list { display: flex; flex-direction: column; gap: 8px; }
+.note-row {
+  display: flex; gap: 12px; align-items: baseline; text-align: left; cursor: pointer;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px;
+}
+.note-row-word { font-family: "Klee One", "Noto Sans JP", "Hiragino Sans", sans-serif; font-weight: 600; font-size: 22px; flex: none; }
+.note-row-text { font-size: 15px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.note-btn {
+  background: none; border: none; color: var(--muted); font-size: 15px;
+  padding: 6px 10px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px;
+}
+
+/* Note editor */
+.modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 20;
+  display: flex; align-items: flex-start; justify-content: center; padding: 6vh 16px 16px;
+}
+.modal[hidden] { display: none; }
+.modal-inner {
+  width: min(640px, 100%); background: var(--bg); border-radius: 20px; padding: 20px;
+  display: flex; flex-direction: column; gap: 12px; user-select: text;
+}
+.modal-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.modal-word { font-family: "Klee One", "Noto Sans JP", "Hiragino Sans", sans-serif; font-weight: 600; font-size: 40px; }
+.modal-sub { color: var(--muted); font-size: 16px; }
+.modal-label { font-size: 15px; color: var(--muted); }
+.modal textarea {
+  width: 100%; font: inherit; font-size: 20px; line-height: 1.45; color: var(--text);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; resize: vertical;
+}
+.modal textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.modal-actions { display: flex; gap: 8px; align-items: center; }
+.modal-actions .spacer { flex: 1; }
 .meta {
   position: absolute; left: 16px; right: 16px; bottom: 12px;
   display: flex; justify-content: space-between; color: var(--muted); font-size: 14px;
@@ -118,7 +172,7 @@ body.hide-answer .card:not(.revealed) .reveal-hint { display: block; }
 }
 .guide {
   position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  font-family: "Klee One", "Noto Sans JP", serif; font-weight: 600;
+  font-family: "Klee One", "Noto Sans JP", "Hiragino Sans", sans-serif; font-weight: 600;
   color: var(--guide); pointer-events: none; white-space: nowrap; line-height: 1;
 }
 .guide[hidden] { display: none; }
@@ -161,7 +215,7 @@ canvas { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: 
 .recent { display: flex; flex-wrap: wrap; gap: 8px; }
 .recent button {
   background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
-  padding: 6px 10px; font-size: 20px; cursor: pointer; font-family: "Klee One", "Noto Sans JP", serif;
+  padding: 6px 10px; font-size: 20px; cursor: pointer; font-family: "Klee One", "Noto Sans JP", "Hiragino Sans", sans-serif;
 }
 .recent small { display: block; font-size: 11px; color: var(--muted); font-family: system-ui, sans-serif; }
 .empty { color: var(--muted); font-size: 14px; }
