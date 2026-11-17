@@ -16,6 +16,7 @@
   <select id="group" aria-label="Nhóm từ"></select>
   <span id="counter" class="counter">– / –</span>
   <div class="bar-actions">
+    <button id="btnHideMeaning" class="chip" aria-pressed="false" title="Ẩn nghĩa tiếng Việt">Ẩn nghĩa</button>
     <button id="btnHide" class="chip" aria-pressed="false" title="Che cách đọc & nghĩa">Che đáp án</button>
     <button id="btnShuffle" class="chip" aria-pressed="false" title="Xáo trộn">Xáo trộn</button>
     <button id="btnHistory" class="chip">Lịch sử</button>
@@ -30,6 +31,10 @@
       <div class="kana" id="kana"></div>
       <div class="romaji" id="romaji"></div>
       <div class="meaning" id="meaning"></div>
+    </div>
+    <div class="note" id="note">
+      <div class="note-text" id="noteText"></div>
+      <button id="btnNote" class="note-btn">✎ Thêm cách liên hệ thú vị</button>
     </div>
     <div class="reveal-hint" id="revealHint">Chạm để xem đáp án</div>
     <div class="meta"><span id="groupTag"></span><span id="seenTag"></span></div>
@@ -56,6 +61,23 @@
   <button id="btnNext" class="navbtn primary">NEXT ›</button>
 </footer>
 
+<div id="noteSheet" class="modal" hidden>
+  <div class="modal-inner">
+    <div class="modal-head">
+      <span class="modal-word" id="noteWord"></span>
+      <span class="modal-sub" id="noteSub"></span>
+    </div>
+    <label for="noteInput" class="modal-label">Cách liên hệ thú vị của tôi</label>
+    <textarea id="noteInput" rows="4" placeholder="Ví dụ: 明日 (ashita) — &quot;A-shi-ta&quot; nghe như &quot;à, sẽ tới&quot; → ngày mai sẽ tới"></textarea>
+    <div class="modal-actions">
+      <button id="btnNoteDelete" class="chip danger">Xoá</button>
+      <span class="spacer"></span>
+      <button id="btnNoteCancel" class="chip">Huỷ</button>
+      <button id="btnNoteSave" class="chip" aria-pressed="true">Lưu</button>
+    </div>
+  </div>
+</div>
+
 <div id="history" class="sheet" hidden>
   <div class="sheet-inner">
     <div class="sheet-head">
@@ -69,8 +91,11 @@
     <div class="recent" id="recent"></div>
     <h3>Đã thuộc</h3>
     <div class="recent" id="learnedList"></div>
+    <h3>Cách liên hệ của tôi</h3>
+    <div class="note-list" id="noteList"></div>
     <div class="sheet-foot">
       <button id="btnReset" class="chip danger">Xoá toàn bộ lịch sử</button>
+      <p class="empty">Cách liên hệ bạn đã viết sẽ được giữ lại.</p>
     </div>
   </div>
 </div>
