@@ -104,6 +104,23 @@ body.hide-meaning .card:not(.revealed) .meaning { visibility: hidden; }
 body.hide-answer .card:not(.revealed) .note,
 body.hide-meaning .card:not(.revealed) .note-text { visibility: hidden; }
 
+/* Pronunciation */
+.speak { position: absolute; top: 12px; left: 12px; display: flex; gap: 8px; }
+.speak-btn {
+  width: 56px; height: 56px; border-radius: 50%; font-size: 26px; line-height: 1;
+  background: var(--bg); border: 1px solid var(--line); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.speak-btn.slow { width: 48px; height: 48px; font-size: 22px; align-self: center; }
+.speak-btn:active, .speak-btn.playing { background: var(--accent); border-color: var(--accent); }
+
+.toast {
+  position: fixed; left: 50%; bottom: 110px; transform: translateX(-50%); z-index: 30;
+  max-width: min(560px, calc(100% - 32px)); background: var(--accent); color: var(--accent-text);
+  padding: 12px 18px; border-radius: 12px; font-size: 16px; text-align: center;
+}
+.toast[hidden] { display: none; }
+
 /* Personal mnemonic note */
 .note { margin-top: 2.5vmin; max-width: 92%; display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .note-text {

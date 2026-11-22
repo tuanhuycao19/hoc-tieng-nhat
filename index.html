@@ -16,6 +16,7 @@
   <select id="group" aria-label="Nhóm từ"></select>
   <span id="counter" class="counter">– / –</span>
   <div class="bar-actions">
+    <button id="btnAutoSpeak" class="chip" aria-pressed="false" title="Tự đọc khi chuyển từ">Tự đọc</button>
     <button id="btnHideMeaning" class="chip" aria-pressed="false" title="Ẩn nghĩa tiếng Việt">Ẩn nghĩa</button>
     <button id="btnHide" class="chip" aria-pressed="false" title="Che cách đọc & nghĩa">Che đáp án</button>
     <button id="btnShuffle" class="chip" aria-pressed="false" title="Xáo trộn">Xáo trộn</button>
@@ -26,6 +27,10 @@
 
 <main class="layout">
   <section id="card" class="card">
+    <div class="speak">
+      <button id="btnSpeak" class="speak-btn" title="Đọc từ" aria-label="Đọc từ">🔊</button>
+      <button id="btnSpeakSlow" class="speak-btn slow" title="Đọc chậm" aria-label="Đọc chậm">🐢</button>
+    </div>
     <div class="word" id="word"></div>
     <div class="answer" id="answer">
       <div class="kana" id="kana"></div>
@@ -99,6 +104,8 @@
     </div>
   </div>
 </div>
+
+<div id="toast" class="toast" hidden></div>
 
 <script src="app.js?v=dev"></script>
 </body>
