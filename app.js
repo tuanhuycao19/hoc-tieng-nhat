@@ -12,6 +12,7 @@
     order: null,        // shuffled list of ids
     hide: false,
     hideMeaning: false,
+    autoSpeak: false,
     guide: true,
     pen: 1,             // index into PEN_SIZES
     learned: {},        // id -> timestamp
@@ -100,6 +101,7 @@
 
   // ---------- Render ----------
   let lastRecordedId = null;
+  let lastSpokenId = null;
 
   function render() {
     const card = $("card");
@@ -138,6 +140,7 @@
     $("btnLearned").setAttribute("aria-pressed", String(learned));
 
     renderNote(w);
+    if (state.autoSpeak && lastSpokenId !== w.id) { lastSpokenId = w.id; speak(w); }
     $("guide").textContent = w.word;
     clearCanvas();
     sizeGuide();
@@ -189,6 +192,7 @@
     if (!$("history").hidden) { if (e.key === "Escape") closeHistory(); return; }
     if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); go(1); }
     else if (e.key === "ArrowLeft") go(-1);
+    else if (e.key === "s" || e.key === "S") $("btnSpeak").click();
   });
 
   // Swipe on the card + tap to reveal
@@ -197,7 +201,7 @@
     let sx = 0, sy = 0, t = 0;
     card.addEventListener("pointerdown", (e) => { sx = e.clientX; sy = e.clientY; t = Date.now(); });
     card.addEventListener("pointerup", (e) => {
-      if (e.target.closest(".note-btn")) return;
+      if (e.target.closest("button")) return;
       const dx = e.clientX - sx, dy = e.clientY - sy;
       if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5 && Date.now() - t < 600) {
         go(dx < 0 ? 1 : -1);
@@ -228,6 +232,7 @@
     $("btnHide").setAttribute("aria-pressed", String(state.hide));
     document.body.classList.toggle("hide-meaning", state.hideMeaning);
     $("btnHideMeaning").setAttribute("aria-pressed", String(state.hideMeaning));
+    $("btnAutoSpeak").setAttribute("aria-pressed", String(state.autoSpeak));
     $("btnShuffle").setAttribute("aria-pressed", String(state.shuffle));
     $("btnGuide").setAttribute("aria-pressed", String(state.guide));
     $("guide").hidden = !state.guide;
@@ -239,6 +244,91 @@
     $("card").classList.remove("revealed");
     applySettingsUI();
     save();
+  });
+
+  // ---------- Pronunciation (text-to-speech) ----------
+  // APK: native Android TTS through the Capacitor TextToSpeech plugin.
+  // Web: the browser's speechSynthesis.
+  const cap = window.Capacitor;
+  const isNative = !!cap?.isNativePlatform?.();
+  const nativeTTS = (method, opts = {}) => {
+    const p = cap?.Plugins?.TextToSpeech;
+    if (p && typeof p[method] === "function") return p[method](opts);
+    return cap.nativePromise("TextToSpeech", method, opts);
+  };
+  let nativeJaOk = null;   // null = not checked yet
+
+  function toast(msg, ms = 3500) {
+    const t = $("toast");
+    t.textContent = msg;
+    t.hidden = false;
+    clearTimeout(toast.timer);
+    toast.timer = setTimeout(() => { t.hidden = true; }, ms);
+  }
+
+  function webJaVoice() {
+    const voices = speechSynthesis.getVoices();
+    return voices.find((v) => /^ja[-_]JP/i.test(v.lang)) || voices.find((v) => /^ja/i.test(v.lang)) || null;
+  }
+  if ("speechSynthesis" in window) speechSynthesis.getVoices(); // start loading voices early
+
+  function setPlaying(btn, on) {
+    $("btnSpeak").classList.remove("playing");
+    $("btnSpeakSlow").classList.remove("playing");
+    if (btn && on) btn.classList.add("playing");
+  }
+
+  async function speak(w, slow = false, btn = $("btnSpeak")) {
+    if (!w) return;
+    // Read the kana: it always gives the right pronunciation, while kanji can have several readings.
+    const text = w.kana || w.word;
+    const rate = slow ? 0.55 : 0.9;
+    try {
+      setPlaying(btn, true);
+      if (isNative) {
+        await nativeTTS("stop").catch(() => {});
+        if (nativeJaOk === null) {
+          nativeJaOk = await nativeTTS("isLanguageSupported", { lang: "ja-JP" })
+            .then((r) => !!r?.supported).catch(() => true);
+        }
+        if (!nativeJaOk) {
+          setPlaying(btn, false);
+          if (confirm("Máy chưa có giọng đọc tiếng Nhật.\nMở cài đặt để tải giọng đọc tiếng Nhật (Google Text-to-Speech)?")) {
+            nativeTTS("openInstall").catch(() => {});
+            nativeJaOk = null; // check again next time
+          }
+          return;
+        }
+        await nativeTTS("speak", { text, lang: "ja-JP", rate, pitch: 1.0, volume: 1.0, category: "playback", queueStrategy: 0 });
+      } else if ("speechSynthesis" in window) {
+        speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = "ja-JP";
+        u.rate = rate;
+        const v = webJaVoice();
+        if (v) u.voice = v;
+        else if (speechSynthesis.getVoices().length) toast("Trình duyệt này không có giọng tiếng Nhật. Hãy dùng bản APK hoặc Chrome.");
+        await new Promise((resolve) => {
+          u.onend = u.onerror = resolve;
+          speechSynthesis.speak(u);
+        });
+      } else {
+        toast("Thiết bị này không hỗ trợ đọc.");
+      }
+    } catch (e) {
+      toast("Không đọc được: " + (e?.message || e));
+    } finally {
+      setPlaying(btn, false);
+    }
+  }
+
+  $("btnSpeak").addEventListener("click", () => list.length && speak(list[pos], false, $("btnSpeak")));
+  $("btnSpeakSlow").addEventListener("click", () => list.length && speak(list[pos], true, $("btnSpeakSlow")));
+  $("btnAutoSpeak").addEventListener("click", () => {
+    state.autoSpeak = !state.autoSpeak;
+    applySettingsUI();
+    save();
+    if (state.autoSpeak && list.length) { lastSpokenId = list[pos].id; speak(list[pos]); }
   });
 
   // ---------- Personal notes ("Cách liên hệ thú vị") ----------
@@ -448,7 +538,7 @@
   $("btnReset").addEventListener("click", () => {
     if (!confirm("Xoá toàn bộ lịch sử học và danh sách đã thuộc?")) return;
     // Personal notes are the user's own writing, so keep them
-    state = { ...makeDefaults(), group: state.group, hide: state.hide, hideMeaning: state.hideMeaning,
+    state = { ...makeDefaults(), group: state.group, hide: state.hide, hideMeaning: state.hideMeaning, autoSpeak: state.autoSpeak,
               guide: state.guide, pen: state.pen, notes: state.notes };
     lastRecordedId = null;
     buildList();
