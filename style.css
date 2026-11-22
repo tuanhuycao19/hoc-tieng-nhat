@@ -58,7 +58,7 @@ button, select { font: inherit; color: inherit; }
   background: var(--surface); border: 1px solid var(--line);
   border-radius: 10px; padding: 8px 12px; font-size: 16px;
 }
-.counter { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 18px; }
+.counter { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 18px; white-space: nowrap; }
 .bar-actions { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
 .chip {
   background: var(--surface); border: 1px solid var(--line);
@@ -237,3 +237,32 @@ canvas { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: 
 .recent small { display: block; font-size: 11px; color: var(--muted); font-family: system-ui, sans-serif; }
 .empty { color: var(--muted); font-size: 14px; }
 .sheet-foot { margin-top: 32px; }
+
+/* ---------- Phone / narrow screens ---------- */
+@media (max-width: 700px) {
+  .bar { flex-wrap: wrap; gap: 8px; padding: 8px 12px; }
+  .bar select { flex: 1; min-width: 0; font-size: 15px; padding: 6px 10px; }
+  .counter { font-size: 16px; white-space: nowrap; }
+  .bar-actions {
+    order: 3; width: 100%; margin-left: 0;
+    flex-wrap: nowrap; justify-content: flex-start;
+    overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  .bar-actions::-webkit-scrollbar { display: none; }
+  .chip { white-space: nowrap; flex: none; min-height: 36px; padding: 6px 12px; font-size: 14px; }
+
+  .layout { padding: 10px 12px; gap: 10px; grid-template-rows: auto minmax(200px, 1fr); }
+  .card { padding: 64px 16px 12px; justify-content: flex-start; overflow-y: auto; }
+  .word { font-size: clamp(72px, 26vw, 170px); }
+  .kana { font-size: clamp(28px, 9vw, 48px); }
+  .romaji, .meaning { font-size: clamp(22px, 7vw, 36px); }
+  .speak-btn { width: 48px; height: 48px; font-size: 22px; }
+  .speak-btn.slow { width: 42px; height: 42px; font-size: 19px; }
+  .note { margin-top: 12px; }
+  .meta { position: static; margin-top: 12px; width: 100%; gap: 8px; font-size: 13px; }
+
+  .pad { gap: 8px; }
+  .nav { padding: 0 12px 12px; gap: 8px; }
+  .navbtn { min-height: 60px; font-size: 20px; white-space: nowrap; padding: 0 10px; }
+  .navbtn.learned { font-size: 16px; padding: 0 12px; }
+}
